@@ -23,6 +23,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# API
+PRODUCT_SHIPPING_API_LEVEL := 30
+
 # A/B
 PRODUCT_PACKAGES += \
     otapreopt_script
