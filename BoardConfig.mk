@@ -21,6 +21,9 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
+# Assert
+TARGET_OTA_ASSERT_DEVICE := camellia,camellian
+
 # A/B
 AB_OTA_UPDATER := true
 
