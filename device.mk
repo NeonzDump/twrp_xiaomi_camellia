@@ -38,8 +38,13 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot Control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl.recovery \
-    android.hardware.boot@1.1-impl
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-service
+
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.2-mtkimpl.recovery \
+    libmtk_bsg.recovery
 
 # Update Engine
 PRODUCT_PACKAGES += \
@@ -50,6 +55,19 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
+# MTK Preloader Utils
+PRODUCT_PACKAGES += \
+    mtk_plpath_utils.recovery
+
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock
+
+# Additional Libraries
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libkeymaster41 \
+    libpuresoftkeymasterdevice
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
